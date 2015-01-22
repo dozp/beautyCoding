@@ -1,15 +1,13 @@
-#include <vector>
-#include <iostream>
-#include <algorithm>
+#include "pie_sort.h"
 
-using namespace std;
+//using namespace std;
 
-void PieSort(vector<int> &ivec)
+int PieSort(vector<int> &ivec)
 {
-	cout<<"Input vector:";
-	for(auto i : ivec)
-		cout<< i<<" ";
-	cout<<endl;
+	//cout<<"Input vector:";
+	//for(auto i : ivec)
+	//	cout<< i<<" ";
+	//cout<<endl;
 	int reverse_times=0;
 	vector<int>::iterator it=ivec.begin(), it_reverse_last=ivec.end();
 	vector<int>::iterator it_search_last=it_reverse_last;
@@ -56,28 +54,29 @@ void PieSort(vector<int> &ivec)
 			--it_search_last; 
 		}
 	}
-	cout<<"reverse times:"<<reverse_times<<endl;
-	cout<<"Output vector:";
-	for(auto i : ivec)
-		cout<< i<<" ";
-	cout<<endl;
+	//cout<<"reverse times:"<<reverse_times<<endl;
+	//cout<<"Output vector:";
+	//for(auto i : ivec)
+	//	cout<< i<<" ";
+	//cout<<endl;
+	return reverse_times;
 }
 
-int main()
-{
-	//cout<<"Please input integers to sort:"<<endl;
-	cout<<"output is"<< endl;
-	//int value;
-	//while(cin>>value)
-	//	ivec.push_back(value);
-	vector<int> ivec{1,2,3,4,5};
-	PieSort(ivec);
-	vector<int> ivec2{5,4,3,2,1};
-	PieSort(ivec2);
-	vector<int> ivec3{1,2,4,3,5};
-	PieSort(ivec3);
-	vector<int> ivec4{1,2,3,5,4};
-	PieSort(ivec4);
-	vector<int> ivec5{3,2,1,6,5,4,9,8,7,0};
-	PieSort(ivec5);
-}
+//int main()
+//{
+//	//cout<<"Please input integers to sort:"<<endl;
+//	cout<<"output is"<< endl;
+//	//int value;
+//	//while(cin>>value)
+//	//	ivec.push_back(value);
+//	vector<int> ivec={1,2,3,4,5};
+//	PieSort(ivec);
+//	vector<int> ivec2{5,4,3,2,1};
+//	PieSort(ivec2);
+//	vector<int> ivec3{1,2,4,3,5};
+//	PieSort(ivec3);
+//	vector<int> ivec4{1,2,3,5,4};
+//	PieSort(ivec4);
+//	vector<int> ivec5{3,2,1,6,5,4,9,8,7,0};
+//	PieSort(ivec5);
+//}
