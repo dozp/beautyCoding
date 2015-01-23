@@ -37,3 +37,21 @@ TEST(PieSortTest, test2)
 	EXPECT_EQ(exp_ivec,ivec);
 	EXPECT_EQ(exp_time,act_time);
 }
+TEST(PieSortTest, test3)
+{
+	int act_time=0, exp_time=1;
+	vector<int> ivec={5,1,2,3,4};
+	vector<int> exp_ivec={5,4,3,2,1};
+	act_time=PieSort(ivec);
+	EXPECT_EQ(exp_ivec,ivec);
+	EXPECT_EQ(exp_time,act_time);
+}
+TEST(PieSortTest, test4)
+{
+	int act_time=0, exp_time=6;
+	vector<int> ivec={1,5,2,3,4};
+	vector<int> exp_ivec={5,4,3,2,1};
+	act_time=PieSort(ivec);
+	EXPECT_EQ(exp_ivec,ivec);
+	EXPECT_EQ(exp_time,act_time);
+}

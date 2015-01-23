@@ -48,14 +48,24 @@ int PieSort(vector<int> &ivec)
 			// transplant max from r2 to r3
 			--b2;
 		}
-		else if(b2<b3)	// r3 is not empty
+		else //max is in the middle	
 		{
-			// reverse r3 to r1
-			reverse(b1, b3);
-			reverse_times++;
-			size_t r3_len=b3-b2;
-			b1+=r3_len;
-			b2=b3;	//empty r3
+			if(b2<b3)	// r3 is not empty
+			{
+				// reverse r3 to r1
+				reverse(b1, b3);
+				reverse_times++;
+				size_t r3_len=b3-b2;
+				b1+=r3_len;
+				b2=b3;	//empty r3
+			}
+			else
+			{
+				// move max to the end
+				reverse(r2_max_it, b3);
+				++reverse_times;
+				--b2;
+			}
 		}
 	}
 	if(b0==b1-1)	//only one element in r1
