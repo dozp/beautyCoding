@@ -1,13 +1,8 @@
 #include "pie_sort.h"
 
-//using namespace std;
 
 int PieSort(vector<int> &ivec)
 {
-	//cout<<"Input vector:";
-	//for(auto i : ivec)
-	//	cout<< i<<" ";
-	//cout<<endl;
 	
 	int reverse_times=0;
 	// each pie is considered as an element in vector
@@ -25,7 +20,7 @@ int PieSort(vector<int> &ivec)
 	b0=b1=ivec.begin();
 	b2=b3=ivec.end();
 
-	while(b1<b2)
+	while(b1<b3-1)
 	{
 		vector<int>::iterator r2_max_it=max_element(b1, b2);
 		if(r2_max_it==b1)	//max is at the head of r2
@@ -68,35 +63,6 @@ int PieSort(vector<int> &ivec)
 			}
 		}
 	}
-	if(b0==b1-1)	//only one element in r1
-	{
-		//reverse r3
-		reverse(b2,b3);
-		++reverse_times;
-	}
-	//cout<<"reverse times:"<<reverse_times<<endl;
-	//cout<<"Output vector:";
-	//for(auto i : ivec)
-	//	cout<< i<<" ";
-	//cout<<endl;
 	return reverse_times;
 }
 
-//int main()
-//{
-//	//cout<<"Please input integers to sort:"<<endl;
-//	cout<<"output is"<< endl;
-//	//int value;
-//	//while(cin>>value)
-//	//	ivec.push_back(value);
-//	vector<int> ivec={1,2,3,4,5};
-//	PieSort(ivec);
-//	vector<int> ivec2{5,4,3,2,1};
-//	PieSort(ivec2);
-//	vector<int> ivec3{1,2,4,3,5};
-//	PieSort(ivec3);
-//	vector<int> ivec4{1,2,3,5,4};
-//	PieSort(ivec4);
-//	vector<int> ivec5{3,2,1,6,5,4,9,8,7,0};
-//	PieSort(ivec5);
-//}
